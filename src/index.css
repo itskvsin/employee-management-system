@@ -1,8 +1,36 @@
 @import "tailwindcss";
-*{
+body{
     background-color: #202020;
     color:white;
 }
+
+#taskList::-webkit-scrollbar{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
