@@ -3,6 +3,13 @@ const employees = [
     id: 1,
     email: "john.doe@example.com",
     password: "123",
+    firstName: "Aarav",
+    taskSummary: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
     tasks: [
       {
         title: "Prepare presentation",
@@ -40,6 +47,13 @@ const employees = [
     id: 2,
     email: "jane.smith@example.com",
     password: "123",
+    firstName: "Kritika",
+    taskSummary: {
+      active: 2,
+      newTask: 1,
+      completed: 2,
+      failed: 0,
+    },
     tasks: [
       {
         title: "Client follow-up",
@@ -87,6 +101,13 @@ const employees = [
     id: 3,
     email: "michael.brown@example.com",
     password: "123",
+    firstName: "Rohan",
+    taskSummary: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
     tasks: [
       {
         title: "Bug fixing",
@@ -124,6 +145,13 @@ const employees = [
     id: 4,
     email: "lisa.johnson@example.com",
     password: "123",
+    firstName: "Priya",
+    taskSummary: {
+      active: 2,
+      newTask: 1,
+      completed: 2,
+      failed: 0,
+    },
     tasks: [
       {
         title: "Design mockups",
@@ -171,6 +199,13 @@ const employees = [
     id: 5,
     email: "david.wilson@example.com",
     password: "123",
+    firstName: "Devansh",
+    taskSummary: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
     tasks: [
       {
         title: "Deploy updates",
@@ -221,8 +256,10 @@ const admin = [
     id: 1,
     email: "admin@example.com",
     password: "123",
+    firstName: "Neha",
   },
 ];
+
 
 
 export const setLocalStorage = () => {
@@ -230,6 +267,8 @@ export const setLocalStorage = () => {
     localStorage.setItem("admin", JSON.stringify(admin))
 }
 export const getLocalStorage = () => {
-    const employees = JSON.parse(localStorage.getItem("employees"));
+    const emp = JSON.parse(localStorage.getItem("employees"));
     const admin = JSON.parse(localStorage.getItem("admin"));
+
+    return {emp , admin};
 }
