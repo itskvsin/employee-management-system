@@ -13,14 +13,16 @@ const App = () => {
 
   const authData = useContext(AuthContext);
 
-  // useEffect(() => {
-  //   if (authData) {
-  //     const loggedInUser = localStorage.getItem("loggedInUser");
-  //     if (loggedInUser) {
-  //       setUser(loggedInUser.role)
-  //     }
-  //   }
-  // },[authData])
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (loggedInUser) {
+      const userData = JSON.parse(loggedInUser)
+      if (loggedInUser) {
+        setUser(userData.role)
+        setLoggedInUserData(userData.data)
+      }
+    }
+  },[])
 
 
 
@@ -34,7 +36,7 @@ const App = () => {
       if(emp){
         setUser("employee");
         setLoggedInUserData(emp);
-        localStorage.setItem("loggedInUser",JSON.stringify({role:"employee"}));
+        localStorage.setItem("loggedInUser",JSON.stringify({role:"employee" , data:emp}));
       }
     } else {
       alert("Invalid Credentials");
